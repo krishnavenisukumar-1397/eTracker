@@ -1,32 +1,22 @@
-package com.expense.entity;
+package com.expense.dto;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ExpenseRequestDto {
 
-@Entity
-public class Expense {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long expenseId;
+	private String friendName;
 	private String type;
+	private Long groupId;
 	private LocalDate date;
 	private Double totalAmount;
 	private Long participant;
 
-	public Expense() {
-		super();
+	public String getFriendName() {
+		return friendName;
 	}
 
-	public Long getExpenseId() {
-		return expenseId;
-	}
-
-	public void setExpenseId(Long expenseId) {
-		this.expenseId = expenseId;
+	public void setFriendName(String friendName) {
+		this.friendName = friendName;
 	}
 
 	public String getType() {
@@ -35,6 +25,14 @@ public class Expense {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public Long getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
 	}
 
 	public LocalDate getDate() {

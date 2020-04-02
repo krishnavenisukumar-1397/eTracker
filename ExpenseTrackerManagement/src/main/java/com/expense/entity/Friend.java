@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Friend {
@@ -15,9 +13,6 @@ public class Friend {
 	private String friendName;
 	private String email;
 	private Long groupId;
-	@OneToOne
-	@JoinColumn(name = "expenseId")
-	private Expense expense;
 
 	public Friend() {
 		super();
@@ -55,20 +50,12 @@ public class Friend {
 		this.groupId = groupId;
 	}
 
-	public Expense getExpense() {
-		return expense;
-	}
-
-	public void setExpense(Expense expense) {
-		this.expense = expense;
-	}
-
-	public Friend(String friendName, String email, Long groupId, Expense expense) {
+	public Friend(String friendName, String email, Long groupId) {
 		super();
 		this.friendName = friendName;
 		this.email = email;
 		this.groupId = groupId;
-		this.expense = expense;
+
 	}
 
 }
